@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet/dist/leaflet.css">
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<link rel="stylesheet"
+href="css/style.css">
+
+</head>
+
+<body>
+
+<h2>Nearby Petrol Pumps</h2>
+
+<input
+id="search"
+placeholder="Search Pump">
+
+<button onclick="searchPump()">
+Search
+</button>
+
+<div id="map"></div>
+
+<script src="js/pumps.js"></script>
+<script src="js/map.js"></script>
+
+</body>
+<div id="pumpModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal()">
+×
+</span>
+
+<h2 id="pumpName"></h2>
+
+<div class="trust-section">
+
+<div class="trust-score">
+Trust Score:
+<span id="trustScore"></span>%
+</div>
+
+<div class="rating-section">
+★★★★★
+<span id="pumpRating"></span>
+</div>
+
+</div>
+
+<button class="green-btn" id="greenBtn">
+🟢 Reliable
+</button>
+
+<button class="red-btn" id="redBtn">
+🔴 Fraudulent
+</button>
+
+<hr>
+
+<h3>Fuel Verification Report</h3>
+
+<input id="fuelPaid"
+placeholder="Liters Paid For">
+
+<input id="fuelReceived"
+placeholder="Liters Received">
+
+<textarea
+id="remarks"
+placeholder="Remarks">
+</textarea>
+
+<button class="submit-report">
+Submit Report
+</button>
+
+<hr>
+
+<h3>Community Reviews</h3>
+
+<div id="reviewsContainer"></div>
+
+</div>
+
+</div>
+</html>
