@@ -1,41 +1,52 @@
-<!DOCTYPE html>
-<html>
-<head>
+
 <link rel="stylesheet" href="css/style.css">
-</head>
 
-<body>
+<h1>FuelEye Dashboard</h1>
 
-<h1>User Dashboard</h1>
-
-<div id="stats"></div>
-
-<div id="pumpList"></div>
-
-<script src="js/pumps.js"></script>
-<script src="js/dashboard.js"></script>
 <div class="analytics">
-
-<div class="stat-card">
-<h1>245</h1>
-<p>Total Reports</p>
+    ...
 </div>
 
-<div class="stat-card">
-<h1>42</h1>
-<p>Fraudulent Pumps</p>
-</div>
+<section class="review-feed">
 
-<div class="stat-card">
-<h1>203</h1>
-<p>Trusted Pumps</p>
-</div>
+    <h2>Community Reviews</h2>
 
-<div class="stat-card">
-<h1>88%</h1>
-<p>Average Trust Score</p>
-</div>
+    <div id="reviewsFeed"></div>
 
-</div>
-</body>
-</html>
+</section>
+
+<section class="proof-submission">
+
+    <h2>Submit Fuel Verification Evidence</h2>
+
+    <select id="pumpSelect">
+
+        <option>PSO Johar Town</option>
+        <option>Shell Thokar</option>
+        <option>Total Parco</option>
+
+    </select>
+
+    <textarea
+        id="reportText"
+        placeholder="Describe your experience">
+    </textarea>
+
+    <input
+        type="file"
+        id="proofImage"
+        accept="image/*">
+
+    <button onclick="submitEvidence()">
+        Submit Evidence
+    </button>
+
+</section>
+
+<section class="myReports">
+
+    <h2>My Submitted Reports</h2>
+
+    <div id="userReports"></div>
+
+</section>

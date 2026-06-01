@@ -1,29 +1,107 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<link rel="stylesheet"
-href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FuelEye Admin Dashboard</title>
+
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<h1>Admin Dashboard</h1>
+<div class="admin-header">
 
-<table>
+    <h1>🛡 FuelEye Admin Dashboard</h1>
 
-<tr>
-<th>Pump</th>
-<th>Trust</th>
-<th>Reports</th>
-</tr>
+    <p>
+        Review community evidence and maintain platform trust.
+    </p>
 
-<tbody id="tableData">
-</tbody>
+</div>
 
-</table>
+<!-- ANALYTICS -->
+
+<div class="analytics">
+
+    <div class="stat-card">
+        <h1>245</h1>
+        <p>Total Reports</p>
+    </div>
+
+    <div class="stat-card">
+        <h1>56</h1>
+        <p>Pending Reviews</p>
+    </div>
+
+    <div class="stat-card">
+        <h1>121</h1>
+        <p>Verified Reports</p>
+    </div>
+
+    <div class="stat-card">
+        <h1>18</h1>
+        <p>Fraud Alerts</p>
+    </div>
+
+</div>
+
+<!-- PETROL PUMP TABLE -->
+
+<section class="admin-section">
+
+    <h2>⛽ Petrol Pump Analytics</h2>
+
+    <table class="admin-table">
+
+        <thead>
+
+            <tr>
+                <th>Pump Name</th>
+                <th>Trust Score</th>
+                <th>Reports</th>
+            </tr>
+
+        </thead>
+
+        <tbody id="tableData">
+
+        </tbody>
+
+    </table>
+
+</section>
+
+<!-- PENDING REPORTS -->
+
+<section class="admin-section">
+
+    <h2>🟡 Pending Verification Queue</h2>
+
+    <div id="pendingContainer">
+
+    </div>
+
+</section>
+
+<!-- VERIFIED REPORTS -->
+
+<section class="admin-section">
+
+    <h2>🟢 Verified Reports</h2>
+
+    <div id="verifiedContainer">
+
+    </div>
+
+</section>
 
 <script src="js/pumps.js"></script>
 <script src="js/admin.js"></script>
 
 </body>
+
 </html>
+

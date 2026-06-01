@@ -51,3 +51,40 @@ Rate
 );
 
 });
+function loadReviews(pumpName){
+
+let reviews =
+JSON.parse(
+localStorage.getItem("approvedReviews")
+) || [];
+
+let filtered =
+reviews.filter(
+r=>r.pump===pumpName
+);
+
+let html="";
+
+filtered.forEach(r=>{
+
+html += `
+<div class="review">
+
+<h4>${r.user}</h4>
+
+<p>${r.review}</p>
+
+<img src="${r.image}" width="150">
+
+<p>✅ Verified By Admin</p>
+
+</div>
+`;
+
+});
+
+document.getElementById(
+"reviewsContainer"
+).innerHTML = html;
+
+}

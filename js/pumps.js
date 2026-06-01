@@ -36,3 +36,65 @@ trust:88,
 reviews:[]
 }
 ];
+function calculateTrustScore(pump){
+
+let verifiedReports =
+JSON.parse(
+localStorage.getItem("approvedReviews")
+) || [];
+
+let reportCount =
+verifiedReports.filter(
+r=>r.pump===pump.name
+).length;
+
+let score =
+
+(
+(pump.green * 3)
++
+(reportCount * 5)
++
+(pump.rating * 10)
+);
+
+let maxScore =
+
+(
+(pump.green + reportCount + 5)
+* 10
+);
+
+pump.trust =
+Math.min(
+100,
+Math.round(
+(score/maxScore)*100
+)
+);
+
+}
+function greenFlag(id){
+
+let pump =
+pumps.find(p=>p.id===id);
+
+pump.green++;
+
+calculateTrustScore(pump);
+
+alert("Marked Reliable");
+
+}
+function redFlag(id){
+
+let pump =
+pumps.find(p=>p.id===id);
+
+pump.red++;
+
+calculateTrustScore(pump);
+
+alert("Marked Fraudulent");
+
+}
