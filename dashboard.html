@@ -1,52 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FuelEye Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    </head>
+<body>
 
-<link rel="stylesheet" href="css/style.css">
+    <h1>FuelEye Dashboard</h1>
 
-<h1>FuelEye Dashboard</h1>
+    <div class="analytics" id="pumpList">
+        </div>
 
-<div class="analytics">
-    ...
-</div>
+    <section class="review-feed">
+        <h2>Community Reviews</h2>
+        <div id="reviewsFeed"></div>
+    </section>
 
-<section class="review-feed">
+    <section class="proof-submission">
+        <h2>Submit Fuel Verification Evidence</h2>
 
-    <h2>Community Reviews</h2>
+        <label for="pumpSelect">Select Fuel Station:</label>
+        <select id="pumpSelect">
+            <option value="PSO Johar Town">PSO Johar Town</option>
+            <option value="Shell Thokar">Shell Thokar</option>
+            <option value="Total Parco">Total Parco</option>
+        </select>
 
-    <div id="reviewsFeed"></div>
+        <textarea id="reportText" placeholder="Describe your experience"></textarea>
 
-</section>
+        <input type="file" id="proofImage" accept="image/*">
 
-<section class="proof-submission">
+        <button onclick="submitEvidence()">
+            Submit Evidence
+        </button>
+    </section>
 
-    <h2>Submit Fuel Verification Evidence</h2>
+    <section class="myReports">
+        <h2>My Submitted Reports</h2>
+        <div id="userReports"></div>
+    </section>
 
-    <select id="pumpSelect">
-
-        <option>PSO Johar Town</option>
-        <option>Shell Thokar</option>
-        <option>Total Parco</option>
-
-    </select>
-
-    <textarea
-        id="reportText"
-        placeholder="Describe your experience">
-    </textarea>
-
-    <input
-        type="file"
-        id="proofImage"
-        accept="image/*">
-
-    <button onclick="submitEvidence()">
-        Submit Evidence
-    </button>
-
-</section>
-
-<section class="myReports">
-
-    <h2>My Submitted Reports</h2>
-
-    <div id="userReports"></div>
-
-</section>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
